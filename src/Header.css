@@ -1,0 +1,35 @@
+
+
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .site-header { 
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    /* border-top: 1px solid #001aff; */
+    /* border-bottom: 2px solid #ffd900; */
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 6px 6px 5px #ffffff;
+  }
+  
+  .site-identity h1 {
+    font-size: 1.5em;
+    margin: .6em 0;
+    display: inline-block;
+  }
+  
+  
+  .site-navigation ul, 
+  .site-navigation li {
+    margin: 0; 
+    padding: 0;
+  }
+  
+  .site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+  }

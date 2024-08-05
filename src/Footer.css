@@ -1,0 +1,7 @@
+.footerContainer{
+    height: 10vh;
+    width: 100%;
+     background-image: linear-gradient(to right, #4481eb 0%, #04befe 100%);
+     position:absolute;
+     top: 90vh;
+    }
