@@ -1,0 +1,6 @@
+.mainContainer{
+    height: 50vh;
+    width: 20vw;
+/* float:right; */
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
