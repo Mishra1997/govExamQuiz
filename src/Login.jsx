@@ -5,12 +5,12 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 function Login(props) {
   const [useName, setUserName] = useState("");
-  const [isLogin, setLogedin] = useState(false);
+ 
 
   const submit = (e) => {
     e.preventDefault();
     props.setModalShow(false);
-    setLogedin(true);
+    props?.showHideLandingpage(true);
   };
 
   return (

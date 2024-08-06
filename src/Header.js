@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import Login from "./Login";
-const Header = () => {
+const Header = (props) => {
   const [modalShow, setModalShow] = useState(false);
   // const setShowmodal=()=>{
   //   setModalShow(true)
@@ -21,7 +21,7 @@ const Header = () => {
             <li onClick={() => setModalShow(true)}>Login</li>
           </ul>
         </nav>
-        <Login modalShow={modalShow} setModalShow={setModalShow} />
+        <Login showHideLandingpage={props.setLogedin} modalShow={modalShow} setModalShow={setModalShow} />
       </div>
     </>
   );
