@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./Header.css";
 import Login from "./Login";
+import { useNavigate } from "react-router-dom";
 const Header = (props) => {
   const [modalShow, setModalShow] = useState(false);
   // const setShowmodal=()=>{
   //   setModalShow(true)
   // }
+  const navigate=useNavigate()
+const signOutMethod=()=>{
+  window.location.reload();
+}
+
 
   return (
     <>
@@ -18,10 +24,14 @@ const Header = (props) => {
             <li>About</li>
             <li>News</li>
             <li>Contact</li>
-            <li onClick={() => setModalShow(true)}>Login</li>
+            {
+props.isLogin?<li onClick={signOutMethod}>Sign out</li>:<li onClick={() => setModalShow(true)}>Sign in</li>
+            }
+            
           </ul>
         </nav>
-        <Login showHideLandingpage={props.setLogedin} modalShow={modalShow} setModalShow={setModalShow} />
+
+        <Login showHideLandingpage={props.setLogedin} modalShow={modalShow} setModalShow={setModalShow}  />
       </div>
     </>
   );

@@ -7,13 +7,15 @@
     color: #ffffff;
   }
   .site-header { 
-    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    /* background-image: linear-gradient(to top, #4481ebd8 0%, #04c0fee0 100%); */
+    /* background-image: linear-gradient(to left, #ffe600da 0%, #fefa04 100%); */
     /* border-top: 1px solid #001aff; */
     /* border-bottom: 2px solid #ffd900; */
-    padding: .5em 1em;
+    /* padding: .5em 1em; */
     display: flex;
+    background-color: rgba(3, 0, 204, 0.753);
     justify-content: space-between;
-    box-shadow: 6px 6px 5px #ffd900;
+    /* box-shadow: 6px 6px 5px #ffd900; */
   }
   
   .site-identity h1 {
