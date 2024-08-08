@@ -18,10 +18,22 @@
     color: white;
 }
 .centerSec{
-    width: 60%;
+    /* width: 60%; */
     margin-top: 5px;
     margin-right: 5px;
     margin-left: 5px;
     /* border: 1px solid rgb(0, 38, 253); */
     /* box-shadow: 2px 2px 2px rgb(253, 122, 0); */
+
+display: flex;
+/* flex-direction:row; */
+flex-wrap: wrap;
+
+
+}
+.chooseitem{
+    width:20vw;
+    /* margin: 5px; */
+    /* height: 10vh; */
+    border: rgb(0, 26, 255) solid 1px;
 }

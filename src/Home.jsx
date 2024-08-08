@@ -14,7 +14,9 @@ const Home =()=>{
   return( <>
 
 <div className="mainSec">
-<div className="leftSec"> <Card.Body>
+<div className="leftSec"> 
+  
+  <Card.Body>
         <Card.Title>WelCome</Card.Title>
         {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
         <Card.Text>
@@ -22,32 +24,69 @@ const Home =()=>{
         </Card.Text>
   manish
       </Card.Body></div>
-<div className="centerSec"> <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+<div className="centerSec">
+   {/* <Card.Body> */}
+        {/* <Card.Title>Choose Categories </Card.Title> */}
         {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+   <Card>
+    
+<Card.Body className="chooseitem">
+dd
+</Card.Body>
+</Card>   
+<Card>   
+<Card.Body className="chooseitem">
 
-        </Card.Text>
+dd
+</Card.Body>
+</Card>   
+<Card>   
+<Card.Body className="chooseitem">
+aaa
+</Card.Body>
+</Card>   
+<Card>   
+<Card.Body className="chooseitem">
+
+dd
+</Card.Body>
+</Card>    <Card>   
+<Card.Body className="chooseitem">
+dd
+</Card.Body>
+</Card>    
+<Card>
+    
+    <Card.Body className="chooseitem">
+    dd
+    </Card.Body>
+    </Card>   
+    <Card>   
+    <Card.Body className="chooseitem">
+    
+    dd
+    </Card.Body>
+    </Card>   
+    <Card>   
+    <Card.Body className="chooseitem">
+    aaa
+    </Card.Body>
+    </Card>   
+    <Card>   
+    <Card.Body className="chooseitem">
+    
+    dd
+    </Card.Body>
+    </Card>    <Card>   
+    <Card.Body className="chooseitem">
+    dd
+    </Card.Body>
+    </Card>  
+
+
   
-      </Card.Body> </div>
+      {/* </Card.Body>  */}
+      </div>
 <div className="leftSec"> <Card.Body>
         <Card.Title>Graphical representation  Comming Soon..</Card.Title>
         {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
