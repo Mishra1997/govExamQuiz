@@ -12,9 +12,9 @@ const Header = (props) => {
 const signOutMethod=()=>{
   navigate('/')
   sessionStorage.setItem("isLogin",false)
-  window.location.reload();
+  // window.location.reload();
   
-  
+  sessionStorage.clear("useName")
 }
 
 const gotoLoginPage=()=>{
@@ -27,7 +27,7 @@ const gotoLoginPage=()=>{
 const GohomePage=()=>{
   navigate('/')
   sessionStorage.setItem("isLogin",false)
-  window.location.reload();
+  sessionStorage.clear("useName")
 }
 
   return (

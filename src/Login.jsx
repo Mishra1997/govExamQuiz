@@ -13,22 +13,14 @@ function Login(props) {
   const submit = (e) => {
     e.preventDefault();
     sessionStorage.setItem("isLogin",true)
+    sessionStorage.setItem("useName",useName)
     navigate('/home')
   };
 
   return (
     <>
     <Header/>
-      {/* <Modal
-        show={props.modalShow}
-        size="s"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body> */}
+   
 <div className="mainContainer">    
 <div className="leftBox">
   <Card>
@@ -76,11 +68,6 @@ function Login(props) {
 
         </div>
 
-        {/* </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => props.setModalShow(false)}>Close</Button>
-        </Modal.Footer>
-      </Modal> */}
     </>
   );
 }

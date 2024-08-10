@@ -14,7 +14,7 @@ display: flex;
 
 .loginCard{
     /* border: 1px solid blue !important; */
-    box-shadow: 2px 2px 8px rgb(0, 4, 255);
+    box-shadow:2px 2px 2px #ffc107 ;
     padding: 5%;
 }
 .leftBox{
@@ -23,6 +23,7 @@ display: flex;
     /* border: 1px solid rgb(233,233,233); */
 }
 .submitbutton{
-    box-shadow: 5px 5px 2px rgb(233, 233, 233);
+    /* box-shadow: 5px 5px 2px rgb(233, 233, 233); */
     float: right;
+    box-shadow:2px 2px 2px #ffc107 ;
 }
