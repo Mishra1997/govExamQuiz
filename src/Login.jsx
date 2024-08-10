@@ -3,19 +3,23 @@ import "./Login.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import { Card } from "react-bootstrap";
+import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 function Login(props) {
   const [useName, setUserName] = useState("");
- 
+ const navigate=useNavigate()
 
   const submit = (e) => {
     e.preventDefault();
-    props.setModalShow(false);
-    props?.showHideLandingpage(true);
+    sessionStorage.setItem("isLogin",true)
+    navigate('/home')
   };
 
   return (
     <>
-      <Modal
+    <Header/>
+      {/* <Modal
         show={props.modalShow}
         size="s"
         aria-labelledby="contained-modal-title-vcenter"
@@ -24,8 +28,17 @@ function Login(props) {
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">Login</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={(e) => submit(e)}>
+        <Modal.Body> */}
+<div className="mainContainer">    
+<div className="leftBox">
+  <Card>
+
+  </Card>
+  </div>  
+  <div className="centerBoxLogin">
+
+  <Card className="loginCard">
+        <Form onSubmit={(e) => submit(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>User Name</Form.Label>
               <Form.Control
@@ -39,9 +52,7 @@ function Login(props) {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+            
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -49,15 +60,27 @@ function Login(props) {
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="submitbutton">
               Submit
             </Button>
           </Form>
-        </Modal.Body>
+        </Card>
+  </div> 
+  <div className="leftBox">
+  <Card>
+    
+    </Card>
+  </div> 
+   
+
+
+        </div>
+
+        {/* </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => props.setModalShow(false)}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
