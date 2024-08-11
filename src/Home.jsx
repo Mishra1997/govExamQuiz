@@ -21,6 +21,7 @@ import politics  from "./utility/Loginpage/politics.png"
 import history  from "./utility/Loginpage/history.png"
 import model  from "./utility/Loginpage/model.png"
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 const Home = () => {
 
 const [res,setResp]=useState([])
@@ -167,16 +168,30 @@ const override = {
     >
       <Modal.Header >
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+        Science & Nature
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+      <Modal.Body >
+      <Form>
+    
+      <Form.Check type="radio" name="m" label={`m`}/>
+      <Form.Check type="radio" name="m" label={`m1`}/>
+      <Form.Check type="radio"  name="m" label={`m2`}/>
+      <Form.Check type="radio" name="m" label={`m3`}/>
+      {/* {.map((type) => (
+        <div key={`default-${type}`} className="mb-3">
+        
+
+          <Form.Check
+            
+            type={type}
+            label={`disabled ${type}`}
+            id={`default-${type}`}
+          />
+        </div>
+      ))} */}
+    </Form>
+      
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={()=>setIsModalOpen(false)}>Close</Button>
