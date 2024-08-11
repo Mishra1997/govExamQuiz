@@ -8,6 +8,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Home.css";
+import RingLoader from "react-spinners/RingLoader";
+import Spinner from 'react-bootstrap/Spinner';
+import Button from 'react-bootstrap/Button';
 import { RiH3 } from "react-icons/ri";
 import { MdOutlineScience } from "react-icons/md";
 import launchss  from "./utility/Loginpage/launchss.png"
@@ -17,7 +20,35 @@ import content  from "./utility/Loginpage/content.png"
 import politics  from "./utility/Loginpage/politics.png"
 import history  from "./utility/Loginpage/history.png"
 import model  from "./utility/Loginpage/model.png"
+import Modal from 'react-bootstrap/Modal';
 const Home = () => {
+
+const [res,setResp]=useState([])
+const [isModalOpen,setIsModalOpen]=useState(false)
+const [isLoading,setisLoading]=useState(false)
+
+const startQz=async(endpoint)=>{
+  setisLoading(true)
+let url="https://opentdb.com/api.php?amount=10&category="+endpoint
+let val= (await fetch(url)).json();
+let data=await val
+
+setResp(data?.results)
+console.log(data?.results)
+setisLoading(false)
+setIsModalOpen(true)
+
+
+}
+
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
+
+
   return (
     <>
       <Header />
@@ -51,15 +82,35 @@ const Home = () => {
 {/* <div className="choosecategories "> */}
 
 {/* </div> */}
+
+     
+
+ <Modal show={isLoading} centered style={{width:"10%",marginLeft:"45%" }}>
+      
+        <Modal.Body>
+        <RingLoader    color="blue"
+        loading={isLoading}
+        cssOverride={override}
+        
+        aria-label="Loading Spinner"
+        data-testid="loader"/>
+
+        </Modal.Body>
+       
+      </Modal> 
+
+
+
 <Container className="choosecategories ">
+  
       <Row>
-        <Col><Card className="smallCard">
+        <Col><Card className="smallCard" onClick={()=>startQz(17)}>
             <Card.Title>Science & Nature</Card.Title>
             <Card.Body >
            <img src={launchss} />
             </Card.Body>
           </Card></Col>
-        <Col><Card className="smallCard">
+        <Col><Card className="smallCard" onClick={()=>startQz(9)}>
             <Card.Title>General Knowledge</Card.Title>
             <Card.Body>
             <img src={knowledge} />
@@ -67,7 +118,7 @@ const Home = () => {
           </Card></Col>
         <Col>
        
-        <Card className="smallCard">
+        <Card className="smallCard" onClick={()=>startQz(13)}>
             <Card.Title>Entertainment</Card.Title>
             <Card.Body>
             <img src={content} />
@@ -76,7 +127,7 @@ const Home = () => {
           </Col>
       </Row>
       <Row>
-      <Col><Card className="smallCard">
+      <Col><Card className="smallCard" onClick={()=>startQz(23)}>
             <Card.Title>History</Card.Title>
             <Card.Body>
             <img src={history} />
@@ -84,7 +135,7 @@ const Home = () => {
           </Card></Col>
         <Col>
        
-           <Card className="smallCard">
+           <Card className="smallCard" onClick={()=>startQz(22)}>
             <Card.Title>Geography</Card.Title>
             <Card.Body>
             <img src={glob} />
@@ -92,7 +143,7 @@ const Home = () => {
           </Card>
           </Col>
       
-        <Col><Card className="smallCard">
+        <Col><Card className="smallCard" onClick={()=>startQz(24)}>
             <Card.Title>Politics</Card.Title>
             <Card.Body>
             <img src={politics} />
@@ -107,6 +158,32 @@ const Home = () => {
           <Card className="rCardsec"></Card>
         </div>
       </div>
+    
+      <Modal
+     show={isModalOpen}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header >
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={()=>setIsModalOpen(false)}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+
+
     </>
   );
 };
