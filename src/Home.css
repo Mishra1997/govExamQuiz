@@ -25,9 +25,9 @@
     /* border: 1px solid rgb(0, 38, 253); */
     /* box-shadow: 2px 2px 2px rgb(253, 122, 0); */
 
-display: flex;
+/* display: flex; */
 /* flex-direction:row; */
-flex-wrap: wrap;
+/* flex-wrap: wrap; */
 ;
 /* flex-align: center; */
 
@@ -46,7 +46,8 @@ flex-wrap: wrap;
     margin-top: 2%;
     margin-bottom: 4%;
     /* border-right:2px solid red !important; */
-    box-shadow:2px 2px 2px #ffc107 ;
+    /* box-shadow:4px 4px 6px #ffbf00 ; */
+    box-shadow:2px 2px 4px #00eeff ;
     overflow: hidden;
     margin-right: 1%;
 }
@@ -55,7 +56,22 @@ flex-wrap: wrap;
     margin-top: 2%;
     margin-bottom: 4%;
     /* border-right:2px solid red !important; */
-    box-shadow:2px 2px 2px #ffc107 ;
+    /* box-shadow:4px 4px 6px #ffbf00 ; */
+    box-shadow:2px 2px 4px #00eeff ;
     overflow: hidden;
     margin-right: 2%; 
+}
+.choosecategories{
+
+}
+.smallCard{
+    margin-top: 12%;
+    margin-bottom: 5%;
+    height: 30vh !important;
+  align-items: center;
+  box-shadow:2px 2px 5px #00eeff ;
+}
+#cattitle{
+margin-top: 2%;
+margin-left: 1.2%;
 }
