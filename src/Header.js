@@ -8,36 +8,33 @@ const Header = (props) => {
   // const setShowmodal=()=>{
   //   setModalShow(true)
   // }
-  const navigate=useNavigate()
-const signOutMethod=()=>{
-  navigate('/')
-  sessionStorage.setItem("isLogin",false)
-  // window.location.reload();
-  
-  sessionStorage.clear("useName")
-}
+  const navigate = useNavigate();
+  const signOutMethod = () => {
+    navigate("/");
+    sessionStorage.setItem("isLogin", false);
+    // window.location.reload();
 
-const gotoLoginPage=()=>{
- 
-  navigate('/login')
+    sessionStorage.clear("useName");
+  };
 
-}
+  const gotoLoginPage = () => {
+    navigate("/login");
+  };
 
-
-const GohomePage=()=>{
-  navigate('/')
-  sessionStorage.setItem("isLogin",false)
-  sessionStorage.clear("useName")
-}
+  const GohomePage = () => {
+    navigate("/");
+    sessionStorage.setItem("isLogin", false);
+    sessionStorage.clear("useName");
+  };
 
   return (
     <>
       <div className="site-header">
         <div className="site-identity">
-       
-          <h1 className="nav"  onClick={GohomePage}> 
-          <BiBookOpen style={{marginLeft:"5px",marginRight:"5px"}} />
-            GovExamQuiz</h1>
+          <h1 className="nav" onClick={GohomePage}>
+            <BiBookOpen style={{ marginLeft: "5px", marginRight: "5px" }} />
+            GovExamQuiz
+          </h1>
         </div>
         <nav className="site-navigation">
           <ul className="nav ">
@@ -45,14 +42,13 @@ const GohomePage=()=>{
             <li>News</li>
             <li>Contact</li>
             {/* <li onClick={gotoLoginPage}>Sign in</li>  */}
-            {
-sessionStorage.getItem("isLogin")==="true"? <li onClick={signOutMethod}>Sign out</li>:<li onClick={gotoLoginPage}>Sign in</li>
-            }
-            
+            {sessionStorage.getItem("isLogin") === "true" ? (
+              <li onClick={signOutMethod}>Sign out</li>
+            ) : (
+              <li onClick={gotoLoginPage}>Sign in</li>
+            )}
           </ul>
         </nav>
-
-
       </div>
     </>
   );

@@ -23,7 +23,18 @@ import model from "./utility/Loginpage/model.png";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Accordion from "react-bootstrap/Accordion";
+import { useForm, SubmitHandler } from "react-hook-form"
+
 const Home = () => {
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+
   const [res, setResp] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setisLoading] = useState(false);
@@ -45,6 +56,12 @@ const Home = () => {
     margin: "0 auto",
     borderColor: "red",
   };
+
+
+const onSubmit=(data)=>{
+console.log(data)
+}
+
 
   return (
     <>
@@ -169,22 +186,25 @@ const Home = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ height: "65vh", overflowY: "scroll" }}>
-          <Form>
-            <Accordion alwaysOpen>
+          <Form onSubmit={handleSubmit(onSubmit)} >
+            <Accordion alwaysOpen defaultActiveKey={["0","1","2","3","4","5","6","7","8","9"]} >
               {res.map((result, index) => (
-                <Accordion.Item eventKey={index}>
+                <Accordion.Item eventKey={index.toString()}>
                   <Accordion.Header>{result?.question}</Accordion.Header>
 
                   <Accordion.Body>
                     <Form.Check
                       type="checkbox"
-                      name={index}
+                      // name={index}
+                     
+                      {...register("correctAns")}
                       label={`${result?.correct_answer}`}
                     />
                     {result?.incorrect_answers?.map((incorrectAns, index) => (
                       <Form.Check
                         type="checkbox"
                         name={index}
+                        {...register("wrongAns")}
                         label={`${incorrectAns}`}
                       />
                     ))}
@@ -192,6 +212,7 @@ const Home = () => {
                 </Accordion.Item>
               ))}
             </Accordion>
+            <input type="submit" value="Click"/>
           </Form>
         </Modal.Body>
         <Modal.Footer>
