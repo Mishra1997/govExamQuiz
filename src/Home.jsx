@@ -21,6 +21,7 @@ import Form from "react-bootstrap/Form";
 import Accordion from "react-bootstrap/Accordion";
 import { useForm } from "react-hook-form";
 import { Chart } from "react-google-charts";
+import GetMyResult from "./GetMyResult";
 const Home = () => {
   const {
     register,
@@ -31,28 +32,46 @@ const Home = () => {
   } = useForm();
 
   const [res, setResp] = useState([]);
+  const [itemcategory, setitemcategory] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setisLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
-  const [getResult, saveResult] = useState('');
+  const [showTotalResult, setShowTotalResult] = useState(false);
+  const [getResult, saveResult] = useState("");
   const [correct_ans, setCorrect_ans] = useState(0);
   const [incorrect_ans, setinCorrect_ans] = useState(0);
 
-  const startQz = async (endpoint) => {
+  const startQz = async (endpoint,categoryName) => {
     setisLoading(true);
-    let url = "https://opentdb.com/api.php?amount=10&category=" + endpoint;
-    let val = (await fetch(url)).json();
-    let data = await val;
+   
+   
+      let url = "https://opentdb.com/api.php?amount=10&category=" + endpoint;
 
-    setResp(data?.results);
-    console.log(data?.results);
-    setisLoading(false);
-    setIsModalOpen(true);
+      let val = (await fetch(url))?.json();
+      let data = await val;
+
+      if(data.response_code==0
+      ){
+        setResp(data?.results);
+        setitemcategory(categoryName);
+        // console.log(data);
+        setisLoading(false);
+        setIsModalOpen(true);
+      }
+      else
+      {
+        alert("Too Many Requests :Try Again")
+        setisLoading(false);
+      }
+    
+    
+  
+  
   };
 
   const datam = [
     ["Task", "Hours per Day"],
-    
+
     ["Correct", correct_ans],
     ["Incorrect", incorrect_ans],
   ];
@@ -61,20 +80,29 @@ const Home = () => {
     margin: "0 auto",
     borderColor: "red",
   };
-   const options = {
- 
+  const options = {
     is3D: true,
-    colors: ["#38812F","#C9190B"]
+    colors: ["#38812F", "#C9190B"],
   };
   const onSubmit = () => {
-    setIsResult(true)
-    saveResult(getValues())
-   
-    // console.log(getValues())
-    setinCorrect_ans(10-getValues().correctAns.length)
-setCorrect_ans(getValues().correctAns.length)
-setIsModalOpen(false)
+    setIsResult(true);
+    saveResult(getValues());
 
+    // console.log(getValues())
+    setinCorrect_ans(10 - getValues()?.correctAns?.length);
+    setCorrect_ans(getValues()?.correctAns?.length);
+    setIsModalOpen(false);
+  };
+
+  const getFullResult = () => {
+    // console.log(res.length)
+    if(res.length>0){
+      setShowTotalResult(true);
+    }
+    else{
+      alert("Kindly take the test and Submit.")
+    }
+ 
   };
 
   return (
@@ -100,15 +128,14 @@ setIsModalOpen(false)
           </Card>
           <Card className="leftCardsec">
             {/* <Card.Title></Card.Title> */}
-            <Card.Body style={{padding:"10%"}}>
-{/* <Card className="check-result">
+            <Card.Body style={{ padding: "10%" }}>
+              {/* <Card className="check-result">
 Check Result
 </Card> */}
 
-<Card className="check-full-result">
-Get Full Result
-</Card>
-
+              <Card className="check-full-result" onClick={getFullResult}>
+                Get Full Result
+              </Card>
             </Card.Body>
           </Card>
         </div>
@@ -138,7 +165,10 @@ Get Full Result
           <Container className="choosecategories ">
             <Row>
               <Col>
-                <Card className="smallCard" onClick={() => startQz(17)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(17, "Science & Nature")}
+                >
                   <Card.Title>Science & Nature</Card.Title>
                   <Card.Body>
                     <img src={launchss} />
@@ -146,7 +176,10 @@ Get Full Result
                 </Card>
               </Col>
               <Col>
-                <Card className="smallCard" onClick={() => startQz(9)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(9, "General Knowledge")}
+                >
                   <Card.Title>General Knowledge</Card.Title>
                   <Card.Body>
                     <img src={knowledge} />
@@ -154,7 +187,10 @@ Get Full Result
                 </Card>
               </Col>
               <Col>
-                <Card className="smallCard" onClick={() => startQz(13)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(13, "Entertainment")}
+                >
                   <Card.Title>Entertainment</Card.Title>
                   <Card.Body>
                     <img src={content} />
@@ -164,7 +200,10 @@ Get Full Result
             </Row>
             <Row>
               <Col>
-                <Card className="smallCard" onClick={() => startQz(23)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(23, "History")}
+                >
                   <Card.Title>History</Card.Title>
                   <Card.Body>
                     <img src={history} />
@@ -172,7 +211,10 @@ Get Full Result
                 </Card>
               </Col>
               <Col>
-                <Card className="smallCard" onClick={() => startQz(22)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(22, "Geography")}
+                >
                   <Card.Title>Geography</Card.Title>
                   <Card.Body>
                     <img src={glob} />
@@ -181,7 +223,10 @@ Get Full Result
               </Col>
 
               <Col>
-                <Card className="smallCard" onClick={() => startQz(24)}>
+                <Card
+                  className="smallCard"
+                  onClick={() => startQz(24, "Politics")}
+                >
                   <Card.Title>Politics</Card.Title>
                   <Card.Body>
                     <img src={politics} />
@@ -192,63 +237,34 @@ Get Full Result
           </Container>
         </div>
         <div className="leftSec">
-          <Card className="rCardsec" >
-           
+          <Card className="rCardsec">
+            {isResult ? (
+              <>
+                {" "}
+                <h4 style={{ textAlign: "center", marginTop: "1%" }}>Result</h4>
+                <Chart
+                  chartType="PieChart"
+                  data={datam}
+                  options={options}
+                  width={"110%"}
+                  height={"100%"}
+                />
+              </>
+            ) : (
+              <img src={evaluation} />
+            )}
+
           
-        
-
-{
-  isResult?<>  <h4 style={{textAlign:"center",marginTop:"1%"}}>
-  Result
-  </h4>
-  <Chart
-  chartType="PieChart"
-  data={datam}
-  options={options}
-  width={"110%"}
-  height={"100%"}
- />
- </>
-: <img src={evaluation} />
-}
-
-           
-           {/* </div> */}
-       
-            {/* <Card.Title className="muted-text" style={{padding:"5%"}}>
-             Result :
-            </Card.Title> */}
-            {/* <br/> */}
-            {/* </br> */}
-          {/* <Button> */}
-                
-              {/* </Button> */}
-
-              {/* <Card.Body>
-                Pass  */}
-                {/* <Pass></Pass> */}
-              {/* </Card.Body> */}
-          
-              {/* <Button variant="outlined">Outlined</Button> */}
-              {/* <Card.Body> */}
-                    {/* <img src={evaluation} /> */}
-                  {/* </Card.Body> */}
-
           </Card>
           <Card className="rCardsec">
-          {/* <img src={evaluation} /> */}
-          <video  autoPlay 
-      muted 
-      loop 
-      playsInline>
-  <source src={iconvideo} type="video/mp4" />
- 
-</video>
-
+            {/* <img src={evaluation} /> */}
+            <video autoPlay muted loop playsInline>
+              <source src={iconvideo} type="video/mp4" />
+            </video>
           </Card>
         </div>
       </div>
-     
+
       <Modal
         show={isModalOpen}
         size="xl"
@@ -256,14 +272,14 @@ Get Full Result
         centered
         // style={{height:"80vh"}}
       >
-         <Form onSubmit={handleSubmit(onSubmit)}>
-        <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Science & Nature
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body style={{ height: "65vh", overflowY: "scroll" }}>
-          {/* <Form > */}
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Modal.Header>
+            <Modal.Title id="contained-modal-title-vcenter">
+           {itemcategory}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ height: "65vh", overflowY: "scroll" }}>
+            {/* <Form > */}
             <Accordion
               alwaysOpen
               defaultActiveKey={[
@@ -279,7 +295,7 @@ Get Full Result
                 "9",
               ]}
             >
-              {res.map((result, index) => (
+              {res?.map((result, index) => (
                 <Accordion.Item eventKey={index.toString()}>
                   <Accordion.Header>{result?.question}</Accordion.Header>
 
@@ -304,19 +320,23 @@ Get Full Result
                 </Accordion.Item>
               ))}
             </Accordion>
-            
-          {/* </Form> */}
-        </Modal.Body>
-        <Modal.Footer>
-        <Button type="submit" value={"ssssd"}> SUBMIT</Button>
-        <Button onClick={() => setIsModalOpen(false)}>CLOSE</Button>
-       
-          
-        </Modal.Footer>
+
+            {/* </Form> */}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button type="submit" value={"ssssd"}>
+              {" "}
+              SUBMIT
+            </Button>
+            <Button onClick={() => setIsModalOpen(false)}>CLOSE</Button>
+          </Modal.Footer>
         </Form>
       </Modal>
-    
-      
+      <GetMyResult
+        showTotalResult={showTotalResult}
+        res={res}
+        setShowTotalResult={() => setShowTotalResult(false)}
+      />
     </>
   );
 };
