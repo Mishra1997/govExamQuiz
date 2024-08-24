@@ -15,6 +15,8 @@ import politics from "./utility/Loginpage/politics.png";
 import history from "./utility/Loginpage/history.png";
 import evaluation from "./utility/Loginpage/evaluation.png";
 import iconvideo from "./utility/Loginpage/iconvideo.mp4";
+import piechartvideo from "./utility/Loginpage/piechartvideo.mp4";
+import onlinetest from "./utility/Loginpage/onlinetest.mp4";
 import model from "./utility/Loginpage/model.png";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -120,11 +122,22 @@ const Home = () => {
       </Card.Body> */}
 
           <Card className="leftCardsec">
-            <Card.Title>Welcome!</Card.Title>
-            <Card.Body style={{ color: "#ffbf00" }}>
-              <img src={model} /> <br />
-              <h3>{sessionStorage.getItem("useName").toUpperCase()}</h3>
-            </Card.Body>
+            {/* <Card.Title > */}
+<div style={{marginLeft:"8%",marginTop:"2%"}}> 
+{sessionStorage.getItem("useName").toUpperCase()}
+</div>
+
+
+           
+               {/* </Card.Title> */}
+            {/* <Card.Body > */}
+
+            <video  muted  autoPlay  loop playsInline>
+              <source src={onlinetest} type="video/mp4" />
+            </video>
+              {/* <img src={model} />  */}
+              {/* <h3>{sessionStorage.getItem("useName").toUpperCase()}</h3> */}
+            {/* </Card.Body> */}
           </Card>
           <Card className="leftCardsec">
             {/* <Card.Title></Card.Title> */}
@@ -251,8 +264,12 @@ Check Result
                 />
               </>
             ) : (
-              <img src={evaluation} />
-            )}
+              <video autoPlay muted loop playsInline>
+              <source src={piechartvideo} type="video/mp4" />
+            </video>
+            )
+            
+            }
 
           
           </Card>
