@@ -75,3 +75,26 @@
 margin-top: 2%;
 margin-left: 1.2%;
 }
+.check-result{
+    margin-top:20% ;
+    text-align:center;
+    box-shadow:2px 2px 5px #00eeff ;
+
+}
+:hover.check-result{
+    box-shadow:2px 2px 5px #ffd000 ; 
+font-weight: bold;
+cursor: pointer;
+}
+.check-full-result{
+    margin-top:40% ;
+    padding-top: 5%;
+    padding-left: 25%;
+   height: 8vh !important;
+    box-shadow:2px 2px 5px #00eeff ;
+}
+:hover.check-full-result{
+    box-shadow:2px 2px 5px #ffd000 ; 
+font-weight: bold;
+cursor: pointer;
+}
