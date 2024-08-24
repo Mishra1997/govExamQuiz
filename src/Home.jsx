@@ -35,6 +35,8 @@ const Home = () => {
   const [isLoading, setisLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
   const [getResult, saveResult] = useState('');
+  const [correct_ans, setCorrect_ans] = useState(0);
+  const [incorrect_ans, setinCorrect_ans] = useState(0);
 
   const startQz = async (endpoint) => {
     setisLoading(true);
@@ -51,8 +53,8 @@ const Home = () => {
   const datam = [
     ["Task", "Hours per Day"],
     
-    ["Correct", 90],
-    ["Incorrect", 10],
+    ["Correct", correct_ans],
+    ["Incorrect", incorrect_ans],
   ];
   const override = {
     display: "block",
@@ -65,10 +67,14 @@ const Home = () => {
     colors: ["#38812F","#C9190B"]
   };
   const onSubmit = () => {
-    
-    // saveResult(getValues())
+    setIsResult(true)
+    saveResult(getValues())
    
-    
+    // console.log(getValues())
+    setinCorrect_ans(10-getValues().correctAns.length)
+setCorrect_ans(getValues().correctAns.length)
+setIsModalOpen(false)
+
   };
 
   return (
