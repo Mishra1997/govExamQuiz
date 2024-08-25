@@ -13,7 +13,14 @@
     /* border-bottom: 2px solid #ffd900; */
     /* padding: .5em 1em; */
     display: flex;
-    background-color: rgb(0, 26, 255);
+    /* background-color: rgb(0, 26, 255); */
+
+    background-image: url("./utility/Loginpage/homeimage.jpg");
+   
+    /* background-attachment: fixed; */
+    /* background-size: auto 100%; */
+    background-position: center;
+/* font-size: medium; */
     /* background-color: rgb(0, 247, 255); */
     justify-content: space-between;
     /* box-shadow: 6px 6px 5px #ffd900; */
@@ -34,7 +41,7 @@
   
   .site-navigation li {
     display: inline-block;
-    margin: 1.4em 1em 1em 1em;
+    margin: 1.5em 3.1em 1em 1em;
   }
   .nav{
     color: white;

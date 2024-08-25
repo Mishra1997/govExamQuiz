@@ -3,6 +3,7 @@ import "./Header.css";
 import Login from "./Login";
 import { useNavigate } from "react-router-dom";
 import { BiBookOpen } from "react-icons/bi";
+import Contact from './Contact'
 const Header = (props) => {
   const [modalShow, setModalShow] = useState(false);
   // const setShowmodal=()=>{
@@ -27,7 +28,18 @@ const Header = (props) => {
     sessionStorage.clear("useName");
   };
 
+const gotocontactPage =()=>{
+  navigate("/contact")
+}
+const gotoaboutPage =()=>{
+  navigate("/about")
+}
+
+const GoToHireMePage =()=>{
+  navigate("/hireme")
+}
   return (
+  
     <>
       <div className="site-header">
         <div className="site-identity">
@@ -38,14 +50,15 @@ const Header = (props) => {
         </div>
         <nav className="site-navigation">
           <ul className="nav ">
-            <li>About</li>
-            <li>News</li>
-            <li>Contact</li>
+          <li onClick={ GoToHireMePage}>Hire Me</li>
+            <li onClick={ gotoaboutPage} >About</li>
+           
+            <li onClick={ gotocontactPage}>Contact</li>
             {/* <li onClick={gotoLoginPage}>Sign in</li>  */}
             {sessionStorage.getItem("isLogin") === "true" ? (
-              <li onClick={signOutMethod}>Sign out</li>
+              <li onClick={signOutMethod}>Sign Out</li>
             ) : (
-              <li onClick={gotoLoginPage}>Sign in</li>
+              <li onClick={gotoLoginPage}>Sign In</li>
             )}
           </ul>
         </nav>
