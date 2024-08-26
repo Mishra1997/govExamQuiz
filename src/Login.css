@@ -17,7 +17,10 @@ display: flex;
     box-shadow:2px 4px 6px #07eeff ;
     /* margin: 5%; */
     padding:6% 4%;
+    /* color: white; */
+    font-weight: bold;
     /* margin-top: 8%; */
+    background-image: url("./utility/Loginpage/homeimage.jpg");
 }
 .leftBox{
     width: 35%;
@@ -29,6 +32,7 @@ display: flex;
     float: right;
     /* box-shadow:2px 2px 2px #ffc107 ; */
 }
+
 
 .mainBox{
     width: 100vw;  
@@ -53,8 +57,10 @@ display: flex;
    }
    .homepage_content_left{
      width: 20%;
+     background-image: url("./utility/Loginpage/homeimage.jpg");
    }
    .homepage_content_center_login{
+    
      /* padding-left: 2%; */
      width: 60%;
      /* align-items: center; */
@@ -64,6 +70,7 @@ display: flex;
    }
    .homepage_content_right{
      width: 20%;
+     background-image: url("./utility/Loginpage/homeimage.jpg");
    }
    #start_button{
      /* background-image: url("./utility/Loginpage/homeimage.jpg"); */
@@ -81,6 +88,7 @@ display: flex;
      box-shadow: 3px 3px 5px rgb(0, 238, 255) ;
    }
    .video_section{
+    
      /* margin-top: 2%; */
      margin-bottom: 5%;
      /* height: 100% !important; */
@@ -100,4 +108,5 @@ display: flex;
 /* color: #ffc107; */
 /* color: #0b07ffbd; */
 padding-bottom: 5rem;
+color: white;
    }

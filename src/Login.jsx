@@ -30,7 +30,7 @@ function Login(props) {
           {" "}
           <Header />
           <div className="homepage_content">
-            <Card className="homepage_content_left">
+            <Card className="homepage_content_left" >
               <Card className="video_section">
                 <video muted autoPlay loop playsInline>
                   <source src={woman_working} type="video/mp4" />
@@ -45,14 +45,14 @@ function Login(props) {
             <div className="homepage_content_center_login">
               <Card className="loginCard">
                 <Card.Title>
-                  <h2 style={{marginBottom:"4%"}} >
+                  <h2 style={{marginBottom:"4%",color:"white"}} >
                   Sign In
                   </h2>
                  
                 </Card.Title>
                 <Form onSubmit={(e) => submit(e)}>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>User Name</Form.Label>
+                    <Form.Label style={{color:"white"}}>User Name</Form.Label>
                     <Form.Control
                       onChange={(e) => setUserName(e.target.value)}
                       required={true}
@@ -62,16 +62,16 @@ function Login(props) {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label style={{color:"white"}}>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label style={{color:"white"}}>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                   </Form.Group>
 
-                  <Button
+                  <Button style={{color:"white"}}
                     variant="primary"
                     type="submit"
                     className="submitbutton"
