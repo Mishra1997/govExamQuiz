@@ -1,7 +1,47 @@
-#item{
+/* #item{
     height: 80vh;
     overflow-y:scroll ;
     overflow-x:hidden;
     /* border: 1px solid red; */
-    box-shadow:2px 2px 4px #00eeff ;
-}
+    /* box-shadow:2px 2px 4px #00eeff ; */
+/* }  */
+#about-container{
+    /* max-width: '600px'; */
+     /* margin: '0 auto'; */
+      /* padding: '20px'; */
+      height: 100vh;
+      background-attachment: fixed;
+      /* background-size: auto 100%; */
+      background-position: center;
+      background-image: url("./utility/Loginpage/homeimage.jpg");
+    }
+    
+    #about-card{
+    /* width: 98%; */
+    /* padding: 2%;
+    margin: 2.5% 0% 5% 18%; */
+    box-shadow: 2px 2px 2px rgb(0, 238, 255);
+    }
+    #about-home{
+        display: flex;
+    }
+    #side-box-left{
+
+width: 20%;
+
+    }
+    #center-box{
+width: 60%;
+
+    }
+    #side-box-right{
+width: 20%;
+    }
+    #main-card{
+        max-height:85vh;
+        padding: 2%;
+        margin-top: 2%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+    }

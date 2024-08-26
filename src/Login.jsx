@@ -81,7 +81,7 @@ function Login(props) {
                 </Form>
                 <marquee id="textmove" scrollamount="2" direction="right" behavior="alternate" 
         >
-          Simply type your name and press the submit button.
+          Simply type your name and click on submit button.
     </marquee>
               
               </Card>

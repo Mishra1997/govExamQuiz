@@ -1,6 +1,8 @@
 // src/Contact.js
 import React, { useState } from 'react';
 import Header from './Header'
+import './Contact.css'
+import {Card} from 'react-bootstrap'
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -42,12 +44,17 @@ const formUrl='https://docs.google.com/forms/d/1pCqxEhYVz_PZBiRt2vOY-RKVZm3GYpIj
 
     return (
 
-        <>
-         <Header/>
-         <div className="contact-container" style={{ maxWidth: '600px', margin: '0 auto', padding: '20px'}}>
-            <h2>Contact Us</h2>
+        <div className="contact-container" >
+           
+            <Header/>
+<Card id='contact-card'>
+    <Card.Title>
+
+    <h2>Contact Us</h2>
+    </Card.Title>
+
             <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '15px' }}>
+                <div>
                     <label htmlFor="name" style={{ display: 'block', marginBottom: '5px' }}>Name:</label>
                     <input
                         type="text"
@@ -60,20 +67,7 @@ const formUrl='https://docs.google.com/forms/d/1pCqxEhYVz_PZBiRt2vOY-RKVZm3GYpIj
                         required
                     />
                 </div>
-               {/* <div style={{ marginBottom: '15px' }}>
-                    <label htmlFor="name" style={{ display: 'block', marginBottom: '5px' }}>Mobile Number:</label>
-                    <input
-              maxlength="12"
-                        type="text"
-                        id="Mobilenumber"
-                        name="Mobilenumber"
-                        placeholder='Mobile Number'
-                        value={formData.Mobilenumber}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px' }}
-                        required
-                    />
-                </div>  */}
+            
                 <div style={{ marginBottom: '15px' }}>
                     <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email:</label>
                     <input
@@ -89,7 +83,7 @@ const formUrl='https://docs.google.com/forms/d/1pCqxEhYVz_PZBiRt2vOY-RKVZm3GYpIj
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                     <label htmlFor="message" style={{ display: 'block', marginBottom: '5px' }}>Message:</label>
-                    <textarea
+                    <input
                         id="message"
                         name="message"
                         placeholder='Message '
@@ -99,12 +93,17 @@ const formUrl='https://docs.google.com/forms/d/1pCqxEhYVz_PZBiRt2vOY-RKVZm3GYpIj
                         required
                     />
                 </div>
-                <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', cursor: 'pointer' }}>
+                <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', cursor: 'pointer' ,float:'right',borderRadius:"4px"}}>
                     Submit
                 </button>
             </form>
+</Card>
+
+           
+         
+        
+       
         </div>
-        </>
      
     );
 };

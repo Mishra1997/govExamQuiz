@@ -28,7 +28,8 @@
     align-items: center;
     /* color: #F7AA00; */
     color: white;
-    padding-top: 12%;
+    padding-top: 10%;
+    
   }
   .homepage_content_right{
     width: 20%;
@@ -41,6 +42,7 @@ border: 1px solid rgb(255, 255, 255);
 /* background-color:rgb(255, 0, 179); */
 /* color: white; */
 box-shadow: 4px 4px 10px rgb(255, 255, 255) ;
+font-weight: bold;
 /* float: right; */
   }
   :hover#start_button{
