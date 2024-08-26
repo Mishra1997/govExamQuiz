@@ -1,18 +1,23 @@
-
-.contact-container{
-/* max-width: '600px'; */
- /* margin: '0 auto'; */
-  /* padding: '20px'; */
+.contact-container {
   height: 100vh;
   background-attachment: fixed;
-  /* background-size: auto 100%; */
+
   background-position: center;
   background-image: url("./utility/Loginpage/homeimage.jpg");
 }
 
-#contact-card{
-width: 60%;
-padding: 2%;
-margin: 2.5% 0% 5% 18%;
-box-shadow: 2px 2px 2px rgb(0, 238, 255);
+#contact-card {
+  width: 60%;
+  padding: 2%;
+  margin: 2.5% 0% 5% 20%;
+  box-shadow: 2px 2px 2px rgb(0, 238, 255);
+}
+
+#letsconnect {
+  padding-left: 2%;
+}
+
+#contact-me-section{
+
+  padding-bottom: 9%;
 }

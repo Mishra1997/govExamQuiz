@@ -26,7 +26,7 @@
         display: flex;
     }
     #side-box-left{
-
+        margin-top: 1%;
 width: 20%;
 
     }
@@ -36,6 +36,7 @@ width: 60%;
     }
     #side-box-right{
 width: 20%;
+margin-top: 1%;
     }
     #main-card{
         max-height:85vh;
@@ -44,4 +45,12 @@ width: 20%;
         overflow-y: scroll;
         overflow-x: hidden;
         scrollbar-width: none;
+        /* border: 1px solid red; */
+       
     }
+
+    #proj{
+        height: 44.5vh !important;
+        overflow-y: scroll;
+        scrollbar-width: none;
+      }
