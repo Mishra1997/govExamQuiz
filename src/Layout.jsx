@@ -31,9 +31,9 @@ function Layout() {
   return (
     <div className="mainBox">
       <div className="item_box">
-        <Card>
+        {/* <Card> */}
           <Header />
-        </Card>
+        {/* </Card> */}
 
         <div className="homepage_content">
           <Card className="homepage_content_left">

@@ -23,7 +23,7 @@
     width: 20%;
   }
   .homepage_content_center{
-    padding-left: 5%;
+    padding-left: 2%;
     width: 60%;
     align-items: center;
     /* color: #F7AA00; */
@@ -34,19 +34,19 @@
     width: 20%;
   }
   #start_button{
-   
-border-radius: 6px;
-height: 6vh;
-border: 1px solid rgb(255, 0, 179);
-background-color:rgb(255, 0, 179);
-color: white;
-box-shadow: 4px 4px 10px rgb(255, 0, 179) ;
-float: right;
+    /* background-image: url("./utility/Loginpage/homeimage.jpg"); */
+ border-radius: 6px; 
+height: 6vh; 
+border: 1px solid rgb(255, 255, 255);
+/* background-color:rgb(255, 0, 179); */
+/* color: white; */
+box-shadow: 4px 4px 10px rgb(255, 255, 255) ;
+/* float: right; */
   }
   :hover#start_button{
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: medium;
-    box-shadow: 3px 3px 5px yellow ;
+    box-shadow: 3px 3px 5px rgb(0, 238, 255) ;
   }
   .video_section{
     /* margin-top: 2%; */

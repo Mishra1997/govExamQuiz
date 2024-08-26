@@ -9,13 +9,15 @@ display: flex;
 
 .centerBoxLogin{
     width: 30%; 
-    padding-top: 5%;
+    /* padding-top: 5%; */
 }
 
 .loginCard{
-    /* border: 1px solid blue !important; */
-    box-shadow:2px 2px 2px #ffc107 ;
-    padding: 5%;
+    border: 1px solid rgb(255, 255, 255) !important;
+    box-shadow:2px 4px 6px #07eeff ;
+    /* margin: 5%; */
+    padding:6% 4%;
+    /* margin-top: 8%; */
 }
 .leftBox{
     width: 35%;
@@ -25,5 +27,77 @@ display: flex;
 .submitbutton{
     /* box-shadow: 5px 5px 2px rgb(233, 233, 233); */
     float: right;
-    box-shadow:2px 2px 2px #ffc107 ;
+    /* box-shadow:2px 2px 2px #ffc107 ; */
 }
+
+.mainBox{
+    width: 100vw;  
+    height: 100vh; 
+    min-height: 100vh;
+    min-width: 100vw;  
+   } 
+   .item_box{
+     background-image: url("./utility/Loginpage/homeimage.jpg");
+     width: 100vw; 
+     height: 100vh;
+     background-attachment: fixed;
+     background-size: auto 100%;
+     background-position: center;
+ 
+   
+    
+   }
+   .homepage_content{
+     display: flex;
+     flex-direction: row;
+   }
+   .homepage_content_left{
+     width: 20%;
+   }
+   .homepage_content_center_login{
+     /* padding-left: 2%; */
+     width: 60%;
+     /* align-items: center; */
+     /* color: #F7AA00; */
+     color: white;
+     /* padding-top: 12%; */
+   }
+   .homepage_content_right{
+     width: 20%;
+   }
+   #start_button{
+     /* background-image: url("./utility/Loginpage/homeimage.jpg"); */
+  border-radius: 6px; 
+ height: 6vh; 
+ border: 1px solid rgb(255, 255, 255);
+ /* background-color:rgb(255, 0, 179); */
+ /* color: white; */
+ box-shadow: 4px 4px 10px rgb(255, 255, 255) ;
+ /* float: right; */
+   }
+   :hover#start_button{
+     /* font-weight: bold; */
+     font-size: medium;
+     box-shadow: 3px 3px 5px rgb(0, 238, 255) ;
+   }
+   .video_section{
+     /* margin-top: 2%; */
+     margin-bottom: 5%;
+     /* height: 100% !important; */
+     /* height: 60%; */
+     /* box-shadow: 3px 3px 5px yellow ; */
+     /* width: 88%; */
+     overflow: hidden;
+     /* border-radius: 4px; */
+   }
+   .video_section2{
+ height: 100% !important;
+ margin-bottom: 10%;
+ /* padding-bottom: 5px; */
+   }
+   #textmove{
+
+/* color: #ffc107; */
+/* color: #0b07ffbd; */
+padding-bottom: 5rem;
+   }

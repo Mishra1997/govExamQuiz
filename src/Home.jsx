@@ -14,8 +14,8 @@ import content from "./utility/Loginpage/content.png";
 import politics from "./utility/Loginpage/politics.png";
 import history from "./utility/Loginpage/history.png";
 import evaluation from "./utility/Loginpage/evaluation.png";
-import iconvideo from "./utility/Loginpage/iconvideo.mp4";
-import piechartvideo from "./utility/Loginpage/piechartvideo.mp4";
+import Award_Trophy from "./utility/Loginpage/Award_Trophy.mp4";
+import PieGraph from "./utility/Loginpage/PieGraph.mp4";
 import onlinetest from "./utility/Loginpage/onlinetest.mp4";
 import model from "./utility/Loginpage/model.png";
 import Modal from "react-bootstrap/Modal";
@@ -265,7 +265,7 @@ Check Result
               </>
             ) : (
               <video autoPlay muted loop playsInline>
-              <source src={piechartvideo} type="video/mp4" />
+              <source src={PieGraph} type="video/mp4" />
             </video>
             )
             
@@ -276,7 +276,7 @@ Check Result
           <Card className="rCardsec">
             {/* <img src={evaluation} /> */}
             <video autoPlay muted loop playsInline>
-              <source src={iconvideo} type="video/mp4" />
+              <source src={Award_Trophy} type="video/mp4" />
             </video>
           </Card>
         </div>
