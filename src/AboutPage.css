@@ -27,7 +27,7 @@
     }
     #side-box-left{
         margin-top: 1%;
-width: 20%;
+        width: 20%;
 
     }
     #center-box{
@@ -54,3 +54,20 @@ margin-top: 1%;
         overflow-y: scroll;
         scrollbar-width: none;
       }
+    @media screen and (max-width: 480px) {
+        #about-container {
+            padding: 10px;
+        }
+    
+        #about-home {
+            flex-direction: column;
+        }
+    
+        #side-box-left, #side-box-right, #center-box {
+            width: 100%;
+        }
+    
+        #main-card {
+            padding: 5px;
+        }
+    }

@@ -21,3 +21,54 @@
 
   padding-bottom: 9%;
 }
+@media screen and (max-width: 768px) {
+ 
+  .contact-container {
+    height: auto;
+    padding: 20px 10px;
+    background-attachment: scroll; 
+  }
+
+  #contact-card {
+    width: 90%;  
+    margin: 2.5% auto; 
+    padding: 5%; 
+  }
+
+ 
+  #letsconnect {
+    padding-left: 0;
+    text-align: center;  
+  }
+
+ 
+  #contact-me-section {
+    padding-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .contact-container {
+    height: auto;
+    padding: 10px 5px;
+    background-size: cover;
+  }
+
+  #contact-card {
+    width: 100%;
+    margin: 5% 0;  
+    padding: 10%;  
+    box-shadow: 1px 1px 3px rgb(0, 238, 255); 
+  }
+
+
+  #letsconnect {
+    padding-left: 0;
+  }
+
+
+  #contact-me-section {
+    padding-bottom: 3%;
+  }
+}

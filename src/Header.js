@@ -9,6 +9,7 @@ const Header = (props) => {
   // const setShowmodal=()=>{
   //   setModalShow(true)
   // }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const signOutMethod = () => {
     navigate("/");
@@ -48,7 +49,8 @@ const GoToHireMePage =()=>{
             GovExamQuiz
           </h1>
         </div>
-        <nav className="site-navigation">
+        <div className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>&#9776;</div>
+        <nav className= {`site-navigation ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav ">
           <li onClick={ GoToHireMePage}>Hire Me</li>
             <li onClick={ gotoaboutPage} >About</li>
